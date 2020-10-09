@@ -1,0 +1,146 @@
+/* Colors */
+$primary-color: hsl(180, 66%, 49%);
+$primary-links-color: hsl(257, 27%, 26%);
+$secondary-color: hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$grayish-violet: hsl(257, 7%, 63%);
+$very-dark-blue: hsl(255, 11%, 22%);
+$very-dark-violet: hsl(260, 8%, 14%);
+
+/* Fonts */
+$body-font-size: 18px;
+$font-weight-regular: 500;
+$font-weight-bold: 700;
+
+/* Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: $body-font-size;
+    color: $gray;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    font-weight: 700;
+}
+
+/* Componets */
+.section {
+    &--showcase {
+        background-color: $grayish-violet;
+    }
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    &--bottom {
+        background-color: $grayish-violet;
+        background-color: black;
+    }
+}
+
+.btn {
+    background-color: $primary-color;
+    color: lighten($gray, 20%);
+    padding: 8px  20px;
+    border-radius: 20px;
+}
+
+.header {
+    padding: 80px 0 100px;
+    display: flex;
+    align-items: center;
+    &__logo {
+        margin-right: 20px;
+        display: flex;
+    }
+    &__nav {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        font-size: 0.8em;
+        margin-left: 20px;
+        &--shift-right {
+            margin-left: auto;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 100px;
+    &__left {
+        margin: auto 0;
+        width: 50%;
+    }
+    &__right {
+        width: 45%;
+    }
+    &__title {
+        color: $very-dark-blue;
+        font-size: 3.6em;
+        font-weight: 700;
+        line-height: 1.2em;
+    }
+    &__subtitle {
+        padding-bottom: 30px;
+    }
+}
+
+.shorten {
+    transform: translateY(-50%);
+    background-color: blue;
+    //background: url(../assets/images/bg-shorten-desktop.svg) ;
+    padding: 50px 0;
+    border-radius: 10px;
+    &__content {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        &__input {
+            border-radius: 10px;
+            margin: auto 0;
+            padding-left: 20px;
+            font-size: 1.2em;
+            flex-grow: 1;
+
+        }
+        & .btn {
+            margin-left: 10px;
+            padding: auto 0;
+        }
+    }
+}
+
+.statistics {
+    color: $very-dark-violet;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    opacity: 1;
+    &__title {
+        font-size: 2.5em;
+
+    }
+    &__subtitle {
+
+    }
+}
