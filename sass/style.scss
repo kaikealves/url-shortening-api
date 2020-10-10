@@ -41,17 +41,14 @@ a {
 /* Componets */
 .section {
     &--showcase {
-        background-color: $grayish-violet;
+        background-color: lighten($grayish-violet, 25%);
     }
 }
 
 .container {
     margin: auto;
-    width: 80%;
-    &--bottom {
-        background-color: $grayish-violet;
-        background-color: black;
-    }
+    width: 77%;
+    max-width: 1100px;
 }
 
 .btn {
@@ -62,7 +59,7 @@ a {
 }
 
 .header {
-    padding: 80px 0 100px;
+    padding: 50px 0 80px;
     display: flex;
     align-items: center;
     &__logo {
@@ -75,7 +72,7 @@ a {
         align-items: center;
     }
     &__link {
-        font-size: 0.8em;
+        font-size: 0.9em;
         margin-left: 20px;
         &--shift-right {
             margin-left: auto;
@@ -87,7 +84,7 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 170px;
     &__left {
         margin: auto 0;
         width: 50%;
@@ -108,25 +105,31 @@ a {
 
 .shorten {
     transform: translateY(-50%);
-    background-color: blue;
-    //background: url(../assets/images/bg-shorten-desktop.svg) ;
-    padding: 50px 0;
+    background-color: $very-dark-blue; 
     border-radius: 10px;
+    &__bg {
+        padding: 50px 0;
+        background: url(../assets/images/bg-shorten-desktop.svg);
+    }
     &__content {
         display: flex;
         width: 90%;
         margin: 0 auto;
         &__input {
+            width: 75%;
             border-radius: 10px;
-            margin: auto 0;
-            padding-left: 20px;
+            padding: 15px 0 15px 20px;
             font-size: 1.2em;
-            flex-grow: 1;
 
         }
-        & .btn {
-            margin-left: 10px;
-            padding: auto 0;
+        &__btn {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 20px;
+            border-radius: 5px;
+            font-size: 1.3em;
         }
     }
 }
@@ -134,13 +137,40 @@ a {
 .statistics {
     color: $very-dark-violet;
     font-weight: $font-weight-bold;
+    width: 50%;
     text-align: center;
+    margin: 80px auto;
     opacity: 1;
     &__title {
         font-size: 2.5em;
 
     }
-    &__subtitle {
+}
 
+.card-row {
+    display: flex;  
+    justify-content: space-between;
+    padding-bottom: 200px;
+}
+ 
+.card {
+    width: 30%;
+    background: white;
+    border-radius: 2px;
+    padding: 20px 40px;
+    &__icon {
+        display: flex;
+        background-color: $primary-links-color;
+        // border-radius: 50%;
+        img {
+            flex-basis: 0 0 100px;
+            width: 100px;
+        }
     }
+    &__title {
+        color: $very-dark-blue;
+        margin-bottom: 10px;;
+    }
+    
+
 }
