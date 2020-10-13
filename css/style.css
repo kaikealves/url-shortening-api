@@ -1,3 +1,13 @@
+/*
+TODO:
+- refactor backgrounds 
+- fix image placing and size (main)
+- delete temp mixins 
+- get correct font sizes and font colors from design
+- make sure card sizes are always the same (change row to column in media query)
+- implement mid line on card row
+- fix buttons (font-size, padding, font color)
+*/
 /* Colors */
 /* Fonts */
 /* Global */
@@ -30,11 +40,14 @@ a {
 /* Componets */
 .section--showcase {
   background-color: #dfdee3;
-  padding-bottom: 100px;
 }
 
 .section--boost {
   background-color: #35323e;
+}
+
+.section--footer {
+  background-color: #232127;
 }
 
 .container {
@@ -46,12 +59,12 @@ a {
 .btn {
   background-color: #2acfcf;
   color: #f2f2f2;
-  padding: 8px  20px;
+  padding: 8px  24px;
   border-radius: 20px;
 }
 
 .header {
-  padding: 50px 0 80px;
+  margin: 50px 0 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -61,6 +74,7 @@ a {
 }
 
 .header__logo {
+  padding-top: 4px;
   margin-right: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,6 +202,7 @@ a {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding-bottom: 120px;
 }
 
 .card {
@@ -231,5 +246,65 @@ a {
 
 .card:nth-child(3) {
   margin-top: 60px;
+}
+
+.boost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(../assets/images/bg-boost-desktop.svg) center/cover no-repeat;
+  padding: 80px 0;
+}
+
+.boost__title {
+  font-size: 2em;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.boost .btn {
+  font-size: 1.2em;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 80px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: red 2px solid;
+}
+
+.footer__logo {
+  width: 20%;
+}
+
+.footer__logo__img {
+  border: blue 2px solid;
+}
+
+.footer__icons {
+  border: blue 2px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 16%;
+}
+
+.footer__icons img {
+  width: 25px;
+  height: 25px;
 }
 /*# sourceMappingURL=style.css.map */

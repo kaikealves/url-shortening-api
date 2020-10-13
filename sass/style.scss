@@ -1,3 +1,14 @@
+/*
+TODO:
+- refactor backgrounds 
+- fix image placing and size (main)
+- delete temp mixins 
+- get correct font sizes and font colors from design
+- make sure card sizes are always the same (change row to column in media query)
+- implement mid line on card row
+- fix buttons (font-size, padding, font color)
+*/
+
 /* Colors */
 $primary-color: hsl(180, 66%, 49%);
 $primary-links-color: hsl(257, 27%, 26%);
@@ -49,10 +60,12 @@ a {
 .section {
     &--showcase {
         background-color: lighten($grayish-violet, 25%);
-        padding-bottom: 100px;
     }
     &--boost {
-        background-color: $very-dark-blue;;
+        background-color: $very-dark-blue;
+    }
+    &--footer {
+        background-color: $very-dark-violet;
     }
 }
 
@@ -65,17 +78,24 @@ a {
 .btn {
     background-color: $primary-color;
     color: lighten($gray, 20%);
-    padding: 8px  20px;
+    padding: 8px  24px;
     border-radius: 20px;
 }
 
 .header {
-    padding: 50px 0 80px;
+    //padding: 50px 0 80px;
+    margin: 50px 0 80px;
     display: flex;
     align-items: center;
+    @include kasborder(green);
     &__logo {
+        padding-top: 4px;
         margin-right: 20px;
         display: flex;
+        @include kasborder(red);
+        img {
+            @include kasborder(blue);
+        }
     }
     &__nav {
         flex-grow: 1;
@@ -163,6 +183,7 @@ a {
     display: flex;  
     justify-content: space-between;
     align-items: flex-start;
+    padding-bottom: 120px;
     @include kasborder();
 }
  
@@ -206,3 +227,41 @@ a {
     }
 }
 
+.boost {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../assets/images/bg-boost-desktop.svg) center/cover no-repeat;
+    padding: 80px 0;
+    &__title {
+        font-size: 2em;
+        margin-bottom: 16px;
+        color: white;
+    }
+    .btn {
+        font-size: 1.2em;
+    }
+}
+
+.footer {
+    display: flex;
+    padding: 80px 0;
+    justify-content: space-between;
+    @include kasborder(red, true);
+    &__logo {
+        width: 20%;
+        &__img {
+            @include kasborder(blue, true);
+        }
+    }
+    &__icons {
+        @include kasborder(blue, true);
+        display: flex;
+        justify-content: space-between;
+        width: 16%;
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
