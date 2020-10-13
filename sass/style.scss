@@ -21,6 +21,13 @@ $font-weight-bold: 700;
     list-style: none;
 }
 
+// TEMP TEMP TEMP TEMP //
+@mixin kasborder($color: red, $enable: false) {
+    @if($enable) {
+        border: $color 2px solid;
+    }
+}
+
 html {
     overflow-x: hidden;
 }
@@ -42,6 +49,10 @@ a {
 .section {
     &--showcase {
         background-color: lighten($grayish-violet, 25%);
+        padding-bottom: 100px;
+    }
+    &--boost {
+        background-color: $very-dark-blue;;
     }
 }
 
@@ -107,6 +118,7 @@ a {
     transform: translateY(-50%);
     background-color: $very-dark-blue; 
     border-radius: 10px;
+    overflow: hidden; // needed for border radius (bg wil overflow otherwise)
     &__bg {
         padding: 50px 0;
         background: url(../assets/images/bg-shorten-desktop.svg);
@@ -139,7 +151,7 @@ a {
     font-weight: $font-weight-bold;
     width: 50%;
     text-align: center;
-    margin: 80px auto;
+    margin: 30px auto 80px;
     opacity: 1;
     &__title {
         font-size: 2.5em;
@@ -150,27 +162,47 @@ a {
 .card-row {
     display: flex;  
     justify-content: space-between;
-    padding-bottom: 200px;
+    align-items: flex-start;
+    @include kasborder();
 }
  
 .card {
-    width: 30%;
+    width: 31.5%;
+    @include kasborder(blue);
     background: white;
-    border-radius: 2px;
-    padding: 20px 40px;
+    border-radius: 5px;
+    padding: 0 20px 40px;
     &__icon {
+        @include kasborder(green);
+        width: 80px;
+        height: 80px;
+        transform: translateY(-50%);
+        border-radius: 50%;
         display: flex;
         background-color: $primary-links-color;
-        // border-radius: 50%;
         img {
-            flex-basis: 0 0 100px;
-            width: 100px;
+            display: block;
+            margin: auto;
         }
     }
     &__title {
+        @include kasborder(magenta);
+        margin-top: -10px;
         color: $very-dark-blue;
-        margin-bottom: 10px;;
+        font-size: 1.2em;
     }
-    
+    &__text {
+        @include kasborder(purple);
+        margin-top: 20px;
+        font-size: 0.9em;
+    }
 
+    &:nth-child(2) {
+        margin-top: 30px;
+    }
+
+    &:nth-child(3) {
+        margin-top: 60px;
+    }
 }
+
