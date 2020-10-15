@@ -75,6 +75,9 @@ a {
     padding: 0.6em  1.5em;
     border-radius: 2em;
     font-weight: $font-weight-bold;
+    &:hover {
+        background-color: lighten($primary-color, 25%);;
+    }
 }
 
 .header {
@@ -95,6 +98,9 @@ a {
         margin-left: 2rem;
         &--shift-right {
             margin-left: auto;
+        }
+        &:hover:not(.btn) {
+            color: $primary-links-color;
         }
     }
 }
@@ -125,7 +131,7 @@ a {
 
 .shorten {
     transform: translateY(-50%);
-    background-color: $very-dark-blue; 
+    background-color: $very-dark-blue;
     border-radius: 10px;
     overflow: hidden; // needed for border radius (bg wil overflow otherwise)
     &__bg {
@@ -137,6 +143,7 @@ a {
         width: 90%;
         margin: 0 auto;
         &__input {
+            outline: 0;
             flex-grow: 1;
             color: $grayish-violet;
             width: 75%;
@@ -176,7 +183,7 @@ a {
 
 .card-row {
     position: relative; //needed for background blue bar
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: 120px;
@@ -264,7 +271,9 @@ a {
         }
         &__items {
             line-height: 1.8em;
-
+            & li:hover {
+                color: $primary-color;
+            }
         }
     }
     &__icons {

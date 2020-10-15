@@ -65,6 +65,10 @@ a {
   font-weight: 700;
 }
 
+.btn:hover {
+  background-color: #91e8e8;
+}
+
 .header {
   margin: 50px 0 80px;
   display: -webkit-box;
@@ -101,6 +105,10 @@ a {
 
 .header__link--shift-right {
   margin-left: auto;
+}
+
+.header__link:hover:not(.btn) {
+  color: #3b3054;
 }
 
 .main {
@@ -157,6 +165,7 @@ a {
 }
 
 .shorten__content__input {
+  outline: 0;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -324,6 +333,10 @@ a {
 
 .footer__list__items {
   line-height: 1.8em;
+}
+
+.footer__list__items li:hover {
+  color: #2acfcf;
 }
 
 .footer__icons {
